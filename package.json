@@ -9,20 +9,23 @@
   ],
   "scripts": {
     "test": "jest plugin.test.ts",
-    "build": "npx esbuild src/index.ts --bundle --sourcemap --tsconfig=tsconfig.build.json --outdir=lib --platform=neutral"
+    "build": "npx esbuild src/index.ts --bundle --sourcemap --tsconfig=tsconfig.build.json --outdir=lib --platform=neutral --external:@babel/helper-plugin-utils"
   },
-  "author": "Ausprain",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
     "@babel/types": "^7.24.7",
     "@types/babel__core": "^7.20.5",
+    "@types/babel__helper-plugin-utils": "^7.10.3",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.9",
     "esbuild": "^0.21.5",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.5",
     "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.24.7"
   }
 }

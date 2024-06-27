@@ -1,6 +1,6 @@
-import _babel from '@babel/core'
-import type { PluginItem, NodePath } from "@babel/core"
+import type { NodePath } from "@babel/core"
 import type { BinaryExpression, TemplateLiteral, StringLiteral, NumericLiteral } from "@babel/types"
+import { declare } from '@babel/helper-plugin-utils'
 
 declare module '@babel/types' {
     interface StringLiteral {
@@ -11,7 +11,10 @@ declare module '@babel/types' {
     }
 }
 type TSNLiteral = TemplateLiteral | StringLiteral | NumericLiteral
-const plugin: (babel: typeof _babel) => PluginItem = ({ types: t }) => {
+
+
+export default declare((api, options) => {
+    const { types: t } = api
     const isAlphanumericLiteral = (node: any): node is StringLiteral | NumericLiteral => t.isNumericLiteral(node) || t.isStringLiteral(node)
     const isTSNLiteral = (node: any): node is TSNLiteral => t.isTemplateLiteral(node) || isAlphanumericLiteral(node)
     const stringRaw = (val: string): string => JSON.stringify(val).slice(1, -1)
@@ -187,12 +190,11 @@ const plugin: (babel: typeof _babel) => PluginItem = ({ types: t }) => {
             TemplateLiteral(path) {
                 checkReplaceLiteralTemplate(path)
             },
-            BinaryExpression(path, state) {
-                if (state.opts.merging) {
+            BinaryExpression(path) {
+                if (options.merging) {
                     mergeAdjacentLiteralsInBinaryExpression(path)
                 }
             }
         }
     }
-}
-export default plugin
+})
