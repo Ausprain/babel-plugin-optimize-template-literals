@@ -1,0 +1,15 @@
+{
+    "include": [
+        "src/**/*",
+        "test/**/*"
+    ],
+    "compilerOptions": {
+        "strict": true,
+        "composite": true,
+        "esModuleInterop": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "types": ["node", "jest"]
+    }
+}

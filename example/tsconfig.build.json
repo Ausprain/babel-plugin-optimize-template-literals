@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.build.json",
+  "include": ["./src/**/*"],
+  "compilerOptions": {
+    "composite": false,
+    "isolatedModules": false,
+    "rootDir": "./src",
+    "outDir": "./tmp",
+    "declaration": false
+  }
+}

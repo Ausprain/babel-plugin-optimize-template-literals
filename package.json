@@ -1,0 +1,28 @@
+{
+  "name": "@babel/plugin-optimize-template-literals",
+  "version": "1.0.0",
+  "description": "Unbrace literal templates in each TemplateLiteral and optimize them.",
+  "main": "lib/index.js",
+  "type": "module",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest plugin.test.ts",
+    "build": "npx esbuild src/index.ts --bundle --sourcemap --tsconfig=tsconfig.build.json --outdir=lib --platform=neutral"
+  },
+  "author": "Ausprain",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/types": "^7.24.7",
+    "@types/babel__core": "^7.20.5",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.9",
+    "esbuild": "^0.21.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
+    "typescript": "^5.5.2"
+  }
+}
