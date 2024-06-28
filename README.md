@@ -39,9 +39,46 @@ After tsc
 ```js
 export const CREATE_TABLE_SQL = `
 CREATE TABLE IF NOT EXISTS ${'users'} (name TEXT);
+`
 ```
 After babel with this plugin
 ```js
-export const CREATE_TABLE_SQL = `
-CREATE TABLE IF NOT EXISTS users (name TEXT);
+export const CREATE_TABLE_SQL = "\nCREATE TABLE IF NOT EXISTS users (name TEXT);\n"
+```
+
+## Usage
+
+```shell
+npm i -D babel-plugin-optimize-template-literals
+```
+
+babel.config.json
+```json
+{
+    "plugins": [
+        ["babel-plugin-optimize-template-literals", { "merging": true }]
+    ]
+}
+```
+
+### With Rollup or Vite
+```shell
+npm i -D @rollup/plugin-babel
+```
+rollup.config.js
+```js
+export default {
+    // ...
+    plugins: [babel({ babelHelpers: 'bundled' })]
+}
+```
+vite.config.ts
+```ts
+export default defineConfig({
+    build: {
+        rollupOptions: {
+            plugins: [babel({ babelHelpers: 'bundled' })]
+        }
+    }
+})
 ```
