@@ -1,4 +1,6 @@
 {
-  "plugins": [["../lib/index.js", { "merging": true }]],
+  "plugins": [
+    ["@babel/plugin-optimize-template-literals", { "merging": true }]
+  ],
   "comments": false
 }
