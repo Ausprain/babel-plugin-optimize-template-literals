@@ -31,5 +31,9 @@
   },
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.24.7"
-  }
+  },
+  "keywords": [
+    "babel-plugin",
+    "template-literal"
+  ]
 }
