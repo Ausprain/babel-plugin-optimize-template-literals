@@ -2,6 +2,10 @@
   "name": "@babel/plugin-optimize-template-literals",
   "version": "1.0.0",
   "description": "Unbrace literal templates in each TemplateLiteral and optimize them.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ausprain/babel-plugin-optimize-template-literals.git"
+  },
   "main": "lib/index.js",
   "type": "module",
   "files": [
