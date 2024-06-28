@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/plugin-optimize-template-literals": "^1.0.0",
+    "babel-plugin-optimize-template-literals": "^1.0.0",
     "sqlite3": "^5.1.7"
   }
 }

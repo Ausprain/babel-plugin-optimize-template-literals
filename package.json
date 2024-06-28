@@ -1,5 +1,5 @@
 {
-  "name": "@babel/plugin-optimize-template-literals",
+  "name": "babel-plugin-optimize-template-literals",
   "version": "1.0.0",
   "description": "Unbrace literal templates in each TemplateLiteral and optimize them.",
   "repository": {

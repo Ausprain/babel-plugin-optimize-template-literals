@@ -185,7 +185,7 @@ export default declare((api, options) => {
 
 
     return {
-        name: 'plugin-optimize-template-literals',
+        name: 'babel-plugin-optimize-template-literals',
         visitor: {
             TemplateLiteral(path) {
                 checkReplaceLiteralTemplate(path)

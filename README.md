@@ -1,4 +1,4 @@
-# @babel/plugin-optimize-template-literals
+# babel-plugin-optimize-template-literals
 > Unbrace literal templates in each TemplateLiteral and optimize them.
 
 ```js
@@ -6,8 +6,9 @@
 `aa${'bb' + 'cc'}dd${1+2+'3'}ee${1+'2'+3}` -> `aabbccdd33ee123`
 ```
 
+## Install
 ```shell
-npm i -D @babel/plugin-optimize-template-literals
+npm i -D babel-plugin-optimize-template-literals
 ```
 
 
